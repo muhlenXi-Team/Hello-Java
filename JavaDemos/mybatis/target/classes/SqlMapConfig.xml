@@ -20,4 +20,9 @@
             </dataSource>
         </environment>
     </environments>
+
+    <!-- 配置映射文件的位置-->
+    <mappers>
+        <mapper resource="com/muhlenxi/dao/IStudentDao.xml"></mapper>
+    </mappers>
 </configuration>
