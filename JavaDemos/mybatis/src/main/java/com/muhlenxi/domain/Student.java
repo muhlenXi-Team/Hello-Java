@@ -3,49 +3,57 @@ package com.muhlenxi.domain;
 import java.util.Date;
 
 public class Student {
-    private int id;
-    private String name;
-    private String gender;
-    private int age;
+    private int stuId;
+    private String stuName;
+    private String stuGender;
+    private int stuAge;
     private Date addTime;
     private int math;
     private int english;
-    private int school_id;
+    private int schoolId;
 
     public Student() {
-
+        this.addTime = new Date();
     }
 
-    public int getId() {
-        return id;
+    public int getStuId() {
+        return stuId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setStuId(int stuId) {
+        this.stuId = stuId;
     }
 
-    public String getName() {
-        return name;
+    public String getStuName() {
+        return stuName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
     }
 
-    public String getGender() {
-        return gender;
+    public String getStuGender() {
+        return stuGender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setStuGender(String stuGender) {
+        this.stuGender = stuGender;
     }
 
-    public int getAge() {
-        return age;
+    public int getStuAge() {
+        return stuAge;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setStuAge(int stuAge) {
+        this.stuAge = stuAge;
+    }
+
+    public int getSchoolId() {
+        return schoolId;
+    }
+
+    public void setSchoolId(int schoolId) {
+        this.schoolId = schoolId;
     }
 
     public Date getAddTime() {
@@ -72,25 +80,17 @@ public class Student {
         this.english = english;
     }
 
-    public int getSchool_id() {
-        return school_id;
-    }
-
-    public void setSchool_id(int school_id) {
-        this.school_id = school_id;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                ", age=" + age +
+                "stuId=" + stuId +
+                ", stuName='" + stuName + '\'' +
+                ", stuGender='" + stuGender + '\'' +
+                ", stuAge=" + stuAge +
                 ", addTime=" + addTime +
                 ", math=" + math +
                 ", english=" + english +
-                ", school_id=" + school_id +
+                ", schoolId=" + schoolId +
                 '}';
     }
 }

@@ -1,5 +1,7 @@
 package com.muhlenxi.dao;
 import java.util.List;
+
+import com.muhlenxi.domain.QueryObject;
 import com.muhlenxi.domain.Student;
 
 public interface IStudentDao {
@@ -16,4 +18,6 @@ public interface IStudentDao {
     List<Student> findStudentsByName(String name);
 
     int findTotal();
+
+    List<Student> findStudentsByQueryObject(QueryObject  object);
 }

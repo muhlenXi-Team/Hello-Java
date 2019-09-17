@@ -1,6 +1,7 @@
 package com.muhlenxi.test;
 
 import com.muhlenxi.dao.IStudentDao;
+import com.muhlenxi.domain.QueryObject;
 import com.muhlenxi.domain.Student;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -53,12 +54,12 @@ public class MyBatisTest {
     @Test
     public void testSaveStudent(){
         Student student = new Student();
-        student.setName("李思思");
-        student.setGender("man");
-        student.setAge(11);
+        student.setStuName("李二二");
+        student.setStuGender("man");
+        student.setStuAge(11);
         student.setMath(100);
         student.setEnglish(99);
-        student.setSchool_id(400);
+        student.setSchoolId(300);
 
         System.out.println("保存前：" + student);
         studentDao.saveStudent(student);
@@ -73,8 +74,8 @@ public class MyBatisTest {
     @Test
     public void testUpdateStudent() {
         Student student = new Student();
-        student.setId(6);
-        student.setName("胡六六");
+        student.setStuId(6);
+        student.setStuName("胡六六");
         studentDao.updateStudent(student);
     }
 
@@ -95,6 +96,19 @@ public class MyBatisTest {
     @Test
     public void testFindTotal() {
         System.out.println(studentDao.findTotal());
+    }
+
+    @Test
+    public void testFindStudentByQueryObject() {
+        QueryObject queryObject = new QueryObject();
+        Student student = new Student();
+        student.setStuName("%五%");
+        queryObject.setStudent(student);
+
+        List<Student> students = studentDao.findStudentsByQueryObject(queryObject);
+        for (Student stu: students) {
+            System.out.println(stu);
+        }
     }
 
     @Test
